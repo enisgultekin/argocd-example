@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: simple-service
+  namespace: argocd
+  labels:
+    app.kubernetes.io/instance: simple-service
+spec:
+  to:
+    kind: Service
+    name: simple-service
+  tls: null
+  host: 'simple-service-argocd.apps-crc.testing'
+  port:
+    targetPort: 8080
